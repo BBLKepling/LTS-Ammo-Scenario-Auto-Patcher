@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Bow_Short"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Bow_Short_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Bow_Short"]/count</value>
+        <value2>200</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Bow_Short_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Bow_Short"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoPrimitive</thingDef>
+                    <count>{Count_Bow_Short_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitPrimitiveSmall</thingDef>
+                    <count>{Count_Bow_Short_Kit}</count>
+                    <stuff>Cloth</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </Operation>
+
+<!-- If a weapon isn't in vanilla scenarios we need to check if it's there or else an error will be thrown -->
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Bow_Recurve"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Bow_Recurve"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Bow_Recurve_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Bow_Recurve"]/count</value>
+        <value2>200</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Bow_Recurve_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Bow_Recurve"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoPrimitive</thingDef>
+                    <count>{Count_Bow_Recurve_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitPrimitiveSmall</thingDef>
+                    <count>{Count_Bow_Recurve_Kit}</count>
+                    <stuff>Cloth</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Bow_Great"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Bow_Great"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Bow_Great_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Bow_Great"]/count</value>
+        <value2>200</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Bow_Great_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Bow_Great"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoPrimitive</thingDef>
+                    <count>{Count_Bow_Great_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitPrimitiveSmall</thingDef>
+                    <count>{Count_Bow_Great_Kit}</count>
+                    <stuff>Cloth</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+  <Operation Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_Revolver"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_Revolver_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_Revolver"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_Revolver_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_Revolver"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_Revolver_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_Revolver_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_Autopistol"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_Autopistol"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_Autopistol_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_Autopistol"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_Autopistol_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_Autopistol"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_Autopistol_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_Autopistol_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_MachinePistol"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_MachinePistol"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_MachinePistol_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_MachinePistol"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_MachinePistol_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_MachinePistol"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_MachinePistol_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_MachinePistol_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+  <Operation Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_BoltActionRifle"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_BoltActionRifle_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_BoltActionRifle"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_BoltActionRifle_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_BoltActionRifle"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_BoltActionRifle_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_BoltActionRifle_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_PumpShotgun"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_PumpShotgun"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_PumpShotgun_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_PumpShotgun"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_PumpShotgun_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_PumpShotgun"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_PumpShotgun_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_PumpShotgun_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_ChainShotgun"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_ChainShotgun"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_ChainShotgun_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_ChainShotgun"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_ChainShotgun_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_ChainShotgun"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_ChainShotgun_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_ChainShotgun_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_HeavySMG"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_HeavySMG"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_HeavySMG_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_HeavySMG"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_HeavySMG_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_HeavySMG"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_HeavySMG_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_HeavySMG_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_LMG"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_LMG"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_LMG_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_LMG"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_LMG_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_LMG"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_LMG_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_LMG_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_AssaultRifle"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_AssaultRifle"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_AssaultRifle_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_AssaultRifle"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_AssaultRifle_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_AssaultRifle"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_AssaultRifle_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_AssaultRifle_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_SniperRifle"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_SniperRifle"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_SniperRifle_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_SniperRifle"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_SniperRifle_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_SniperRifle"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_SniperRifle_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_SniperRifle_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+  <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_Minigun"]</xpath>
+  <match Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_Minigun"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_Minigun_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_Minigun"]/count</value>
+        <value2>150</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_Minigun_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_Minigun"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoIndustrial</thingDef>
+                    <count>{Count_Gun_Minigun_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitIndustrialSmall</thingDef>
+                    <count>{Count_Gun_Minigun_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </match>
+</Operation>
+
+  <Operation Class="XmlExtensions.ForEach">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Gun_ChargeRifle"]</xpath>
+    <storeIn>ScenarioDef_Path</storeIn>
+    <prefixLength>4</prefixLength>
+    <apply> 
+      <Operation Class="XmlExtensions.CreateVariable">
+        <storeIn>Count_Gun_ChargeRifle_Ammo</storeIn>
+        <value>{ScenarioDef_Path}/li[thingDef="Gun_ChargeRifle"]/count</value>
+        <value2>200</value2>
+        <fromXml>true</fromXml>
+        <defaultValue>1</defaultValue>
+        <operation>*</operation>
+        <apply>
+          <Operation Class="XmlExtensions.CreateVariable">
+            <storeIn>Count_Gun_ChargeRifle_Kit</storeIn>
+            <value>{ScenarioDef_Path}/li[thingDef="Gun_ChargeRifle"]/count</value>
+            <fromXml>true</fromXml>
+            <defaultValue>1</defaultValue>
+            <apply>
+              <Operation Class="PatchOperationAdd">
+                <xpath>{ScenarioDef_Path}</xpath>
+                <value>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>AmmoSpacer</thingDef>
+                    <count>{Count_Gun_ChargeRifle_Ammo}</count>
+                  </li>
+                  <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>KitSpacerSmall</thingDef>
+                    <count>{Count_Gun_ChargeRifle_Kit}</count>
+                    <stuff>Synthread</stuff>
+                  </li>
+                </value>
+              </Operation>
+            </apply>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </Operation>
+
+</Patch>
